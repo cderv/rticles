@@ -76,6 +76,19 @@ jobs:
         run: rcmdcheck::rcmdcheck(args = c("--no-manual", "--as-cran"), error_on = "warning", check_dir = "check")
         shell: Rscript {0}
 
+      - name: Get TinyTex root folder
+        run: |
+          writeLines(tinytex::tl_pkg(), ".github/tex-pkgs.txt")
+          cat("::set-env name=TINYTEX_ROOT::", tinytex::tinytex_root(), sep = "")
+        shell: Rscript {0}
+
+      - name: Cache Tex Packages
+        uses: actions/cache@v2
+        with:
+          path: ${{ env.TINYTEX_ROOT }}
+          key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/tex-pkgs.txt') }}
+          restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
+
       - name: Upload check results
         if: failure()
         uses: actions/upload-artifact@main
