@@ -1,0 +1,13 @@
+pandoc: 2.7.3
+pkgdown: 1.6.1.9001
+pkgdown_sha: ce9781a15c7ea07df9fb17a11295ba4abec0b54b
+articles:
+  examples: articles/examples.html
+  examples_grid: articles/examples_grid.html
+  examples_linear: articles/examples_linear.html
+  rticles: rticles.html
+last_built: 2021-07-26T21:11Z
+urls:
+  reference: https://pkgs.rstudio.com/rticles/reference
+  article: https://pkgs.rstudio.com/rticles/articles
+
