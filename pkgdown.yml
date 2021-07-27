@@ -6,7 +6,7 @@ articles:
   examples_grid: articles/examples_grid.html
   examples_linear: articles/examples_linear.html
   rticles: rticles.html
-last_built: 2021-07-27T07:52Z
+last_built: 2021-07-27T08:53Z
 urls:
   reference: https://pkgs.rstudio.com/rticles/reference
   article: https://pkgs.rstudio.com/rticles/articles
